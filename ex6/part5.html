@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputStr1 = 'Why so serioua'
+    let inputStr2 = 'Why so serious'
+    if (inputStr1.length === inputStr2.length) {
+        for (let i = 0; i < inputStr1.length; i++) {
+            if (inputStr1[i] !== inputStr2[i]) {
+                document.write('Two string are different')
+            }
+            if (i === inputStr1.length - 1 && inputStr1[i] === inputStr2[i]){
+                document.write('Two string are identical')
+            }
+                }
+    }else {
+        document.write('Two string are different')
+    }
+</script>
+</body>
+</html>

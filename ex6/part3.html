@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputStr = ['c', 's', 'c', '2.17', '6', '1']
+    let index = 0
+    let cnt = 0
+    while (inputStr[index] !== undefined) {
+        let elementToStr = inputStr[index].toString()
+        if (elementToStr[0] === '0' || elementToStr[0] === '1' || elementToStr[0] === '2' || elementToStr[0] === '3' ||
+            elementToStr[0] === '4' || elementToStr[0] === '5' || elementToStr[0] === '6' || elementToStr[0] === '7' ||
+            elementToStr[0] === '8' || elementToStr[0] === '9') {
+            cnt++
+        }
+        index++
+    }
+    document.write(`The number of number-element is ${cnt}`)
+</script>
+</body>
+</html>
