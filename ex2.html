@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    const enWord = ['nothing', 'gonna', 'change', 'my', 'love', 'for', 'you']
+    const vnWord = ['không có gì', 'sẽ', 'thay đổi', 'tình yêu', 'của anh', 'dành cho', 'em']
+
+    const inputWord = prompt('Input your word!')
+    if (enWord.includes(inputWord) === true){
+        document.write(`The Vietnamese term is " ${vnWord[enWord.indexOf(inputWord)]}"`)
+    }else{
+        document.write('Your word doesn\'t exist')
+    }
+</script>
 </body>
 </html>
