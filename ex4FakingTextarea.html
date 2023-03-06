@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Type anything slowly</h2>
+<textarea name="" id="" cols="30" rows="10" ></textarea>
+
+<script>
+    const inputText = document.querySelector('textarea')
+    inputText.addEventListener('keyup', writeOut)
+    const outputText = 'I\'M AN IDIOT!'
+    const outputTextToStr = outputText.toString()
+    let result = []
+    let index = 0
+
+    function writeOut(event) {
+        if (event.keyCode >= 49 && event.keyCode <= 90) {
+            result.push(outputTextToStr[index])
+            inputText.value = result.join('')
+            index++
+        }
+        if (index > outputTextToStr.length){
+            result = []
+            index = 0
+            inputText.value = ''
+        }
+    }
+</script>
+</body>
+</html>
