@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><p id="gameBoard" style="font-size: xx-large"></p>
+<button id="changeValue" type="submit">Change value</button>
+<script>
+    let n = 7
+    let m = 5
+    let gameBoard = []
+
+    for (let i = 0; i < 5; i++) {
+        gameBoard[i] = []
+        for (let j = 0; j < 7; j++) {
+            gameBoard[i][j] = '*'
+        }
+    }
+
+    let display = ''
+    printGameBoard()
+    
+    let btn = document.querySelector('button')
+    btn.addEventListener('click', changeValue)
+    let turn = 0
+
+    function changeValue(col, row) {
+        col = parseInt(prompt("Input colum position"))
+        row = parseInt(prompt("Input row position"))
+        if (turn % 2 === 0) {
+            gameBoard[col][row] = 'x'
+        } else {
+            gameBoard[col][row] = 'o'
+        }
+        checkRow()
+        checkCol()
+        printGameBoard()
+        turn++
+    }
+
+    function printGameBoard() {
+        display = ''
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 7; j++) {
+                display += gameBoard[i][j] + ' '
+            }
+            display += '<br>'
+        }
+        document.getElementById('gameBoard').innerHTML = display
+    }
+
+    function checkRow() {
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (gameBoard[i][j] === gameBoard[i][j + 1]
+                    && gameBoard[i][j] === gameBoard[i][j + 2]) {
+                    switch (gameBoard[i][j]) {
+                        case 'x':
+                            alert('x won')
+                            break
+                        case 'o':
+                            alert('o won')
+                            break
+                    }
+                }
+            }
+        }
+    }
+
+    function checkCol() {
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 7; j++) {
+                if (gameBoard[i][j] === gameBoard[i + 1][j]
+                    && gameBoard[i][j] === gameBoard[i + 2][j]) {
+                    switch (gameBoard[i][j]) {
+                        case 'x':
+                            alert('x won')
+                            break
+                        case 'o':
+                            alert('o won')
+                            break
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
