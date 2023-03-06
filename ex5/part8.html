@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const myArr = [0, 9, 1, 8, 2, 7, 3, 6, 4, 5]
+    for (let i = 0; i < myArr.length; i++) {
+        for (let j = 0; j < myArr.length; j++) {
+            let btw = 0
+            if (myArr[j] < myArr[j + 1]) {
+                btw = myArr[j]
+                myArr[j] = myArr[j + 1]
+                myArr[j + 1] = btw
+            }
+        }
+    }
+    document.write(myArr)
+</script>
+</body>
+</html>
