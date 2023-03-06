@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const inputText = prompt('Input your text!')
+    const inputTextToArr = inputText.toString()
+    const result = []
+
+    for (let i = 0; i < inputTextToArr.length; i++) {
+        if (checkUpperCase(inputTextToArr[i]) === true) {
+            result.push(inputTextToArr[i].toLowerCase())
+        } else {
+            result.push(inputTextToArr[i].toUpperCase())
+        }
+    }
+    document.write(result.join(''))
+
+    function checkUpperCase(inputChar) {
+        return inputChar === inputChar.toUpperCase()
+    }
+</script>
+</body>
+</html>

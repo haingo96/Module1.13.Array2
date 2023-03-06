@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const inputNumber = prompt('Input your number!')
+    const inputNumberToStr = inputNumber.toString()
+    const result = [inputNumberToStr[0]]
+
+    for (let i = 1; i < inputNumberToStr.length; i++) {
+        if (inputNumberToStr[i - 1] % 2 === 0 && inputNumberToStr[i] % 2 === 0) {
+            result.push('-' , inputNumberToStr[i])
+        } else {
+            result.push(inputNumberToStr[i])
+        }
+    }
+
+    document.write(result.join(''))
+</script>
+</body>
+</html>
